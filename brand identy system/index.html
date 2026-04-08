@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Brand Identity Builder MVP</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&family=Montserrat:wght@500;700&family=Poppins:wght@400;600;700&family=Lora:wght@500;700&family=Nunito+Sans:wght@400;600;700&family=Space+Grotesk:wght@500;700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="app">
+    <header class="hero">
+      <p class="eyebrow">MVP</p>
+      <h1>Interactive Brand Identity Builder</h1>
+      <p class="subtitle">Configure your brand and see your identity system update in real-time.</p>
+    </header>
+    <section class="workspace">
+      <aside class="panel controls">
+        <h2>Brand Controls</h2>
+        <div class="group">
+          <label for="brandName">Brand Name</label>
+          <input id="brandName" type="text" value="Vvisualize">
+        </div>
+        <div class="group">
+          <label for="tagline">Tagline</label>
+          <input id="tagline" type="text" value="Designing identities that resonate.">
+        </div>
+        <div class="group">
+          <label for="industry">Industry</label>
+          <input id="industry" type="text" value="Creative Studio">
+        </div>
+        <div class="group">
+          <label for="paletteSelect">Color Palette</label>
+          <select id="paletteSelect"></select>
+        </div>
+        <div class="group">
+          <label>Logo Mark Style</label>
+          <div class="toggle-row" id="logoStyles"></div>
+        </div>
+        <div class="group">
+          <label>Typography Pair</label>
+          <select id="fontPair"></select>
+        </div>
+        <div class="group">
+          <label>Personality Tags</label>
+          <div class="tag-grid" id="personalityTags"></div>
+        </div>
+        <button id="generateGuidelines" class="cta">Generate full brand guidelines doc</button>
+      </aside>
+      <section class="panel preview">
+        <h2>Live Preview Deliverables</h2>
+        <article class="card logo-lockup" id="logoLockupCard">
+          <h3>Logo Lockup</h3>
+          <div class="logo-stage">
+            <div id="logoMark" class="logo-mark"></div>
+            <div class="logo-text">
+              <p id="brandNamePreview" class="brand-name"></p>
+              <p id="taglinePreview" class="tagline"></p>
+            </div>
+          </div>
+        </article>
+        <article class="card palette-strip">
+          <h3>Color Palette</h3>
+          <div class="swatches" id="swatches"></div>
+          <div class="swatch-labels" id="swatchLabels"></div>
+        </article>
+        <article class="card business-card" id="businessCard">
+          <h3>Business Card Mockup</h3>
+          <div class="business-face front">
+            <p id="bizBrand"></p>
+            <p id="bizTagline"></p>
+          </div>
+          <div class="business-face back">
+            <p id="bizName">Your Name</p>
+            <p id="bizRole">Brand Designer</p>
+            <p id="bizIndustry"></p>
+          </div>
+        </article>
+        <article class="card social-template" id="socialTemplateCard">
+          <h3>Social Media Template Preview</h3>
+          <div class="social-post">
+            <div class="social-header">
+              <div class="social-avatar" id="socialAvatar"></div>
+              <div>
+                <p class="social-handle" id="socialHandle"></p>
+                <p class="social-industry" id="socialIndustry"></p>
+              </div>
+            </div>
+            <div class="social-visual">
+              <p class="social-pill" id="socialPill"></p>
+              <h4 id="socialHeadline"></h4>
+              <p id="socialSubtext"></p>
+              <button type="button" class="social-cta" id="socialCta">View Identity</button>
+            </div>
+          </div>
+        </article>
+        <article class="card packaging-mockup" id="packagingCard">
+          <h3>Packaging Mockup Preview</h3>
+          <div class="packaging-stage">
+            <div class="package-box">
+              <p class="package-brand" id="packBrand"></p>
+              <p class="package-line" id="packLine"></p>
+              <span class="package-tag" id="packTag"></span>
+            </div>
+            <div class="package-label">
+              <p id="packIndustry"></p>
+              <p id="packDescriptor"></p>
+            </div>
+          </div>
+        </article>
+        <article class="card typography-specimen" id="typeCard">
+          <h3>Typography Specimen + Tags</h3>
+          <p id="headingSample">Heading Sample</p>
+          <p id="bodySample">This is your body text style. Use this pair for consistency across websites, social posts, and brand collateral.</p>
+          <div class="active-tags" id="activeTags"></div>
+        </article>
+      </section>
+    </section>
+    <section class="panel guidelines-output">
+      <h2>Brand Guidelines Output</h2>
+      <pre id="guidelinesDoc">Click “Generate full brand guidelines doc” to produce your ready-to-use document.</pre>
+    </section>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
